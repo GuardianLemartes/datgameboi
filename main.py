@@ -170,17 +170,17 @@ secondRoom = Room(name = "Second Room", desc = "Another room.", south = firstRoo
 thirdRoom = Room(name = "Third Room", desc = "A room with a massive pit.", east = secondRoom, items = [Pit()])
 
 # intro
-print("Welcome to Hale! You need to pick a class.")
+print("Welcome to Hale! You need to pick a class.\n")
 time.sleep(3)
-playerClass = input("Type any class you want. > ")
-print("Your {0} is going to be great!".format(playerClass))
+playerClass = input("Type any class you want.\n> ")
+print("Your {0} is going to be great!\n".format(playerClass))
 time.sleep(3)
-print("Now that you're {0} {1}, you're going to need a weapon.".format(getArticle(playerClass), playerClass))
-playerWeapon = input("What weapon would you like? >")
+print("Now that you're {0} {1}, you're going to need a weapon.\n".format(getArticle(playerClass), playerClass))
+playerWeapon = input("What weapon would you like?\n>")
 inventory.append(Weapon(name = playerWeapon))
-print("Your {0} seems pretty cool, but I've seen better.".format(playerWeapon))
+print("Your {0} seems pretty cool, but I've seen better.\n".format(playerWeapon))
 time.sleep(3)
-print("Now that you're {0} {1} and you have your {2}, you're ready to begin your adventure in Hale.".format(getArticle(playerClass), playerClass, playerWeapon))
+print("Now that you're {0} {1} and you have your {2}, you're ready to begin your adventure in Hale.\n".format(getArticle(playerClass), playerClass, playerWeapon))
 time.sleep(3)
 
 # Go into the first room at the start
