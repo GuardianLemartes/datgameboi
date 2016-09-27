@@ -1,4 +1,4 @@
-import random, sys
+import random, sys, time
 
 """
 Text adventure engine
@@ -158,10 +158,31 @@ class Pit(Item):
         print("How did you even get a pit?")
         die()
 
+class Weapon(Item):
+    # Wepon
+    def __init__(self, name = "weapon", desc = "A weapon.", dmg = 1):
+        Item.__init__(self, name, desc)
+        self.dmg = 1
+
 # Room declarations
 firstRoom = Room(items = [Ruby(), Ruby()])
 secondRoom = Room(name = "Second Room", desc = "Another room.", south = firstRoom)
 thirdRoom = Room(name = "Third Room", desc = "A room with a massive pit.", east = secondRoom, items = [Pit()])
+
+# intro
+print("Welcome to Hale! You need to pick a class.")
+time.sleep(3)
+playerClass = input("Type any class you want. > ")
+print("Your {0} is going to be great!".format(playerClass))
+time.sleep(3)
+print("Now that you're {0} {1}, you're going to need a weapon.".format(getArticle(playerClass), playerClass))
+playerWeapon = input("What weapon would you like? >")
+inventory.append(Weapon(name = playerWeapon))
+print("Your {0} seems pretty cool, but I've seen better.".format(playerWeapon))
+time.sleep(3)
+print("Now that you're {0} {1} and you have your {2}, you're ready to begin your adventure in Hale.".format(getArticle(playerClass), playerClass, playerWeapon))
+time.sleep(3)
+
 # Go into the first room at the start
 firstRoom.enter()
 
