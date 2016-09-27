@@ -36,7 +36,7 @@ alive = True
 synRoom = ["room", "place", "here", "around"]
 synPlayer = ["self", "player", "me", "myself"]
 synScore = ["points", "score"]
-synGet = ["get", "pickup", "take"]
+synGet = ["get", "pickup", "take", "grab"]
 synDie = ["kms", "die", "suicide"]
 synPit = ["pit", "into pit", "in pit"]
 
