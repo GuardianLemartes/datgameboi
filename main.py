@@ -165,9 +165,14 @@ class Weapon(Item):
         self.dmg = 1
 
 # Room declarations
-firstRoom = Room(items = [Ruby(), Ruby()])
-secondRoom = Room(name = "Second Room", desc = "Another room.", south = firstRoom)
-thirdRoom = Room(name = "Third Room", desc = "A room with a massive pit.", east = secondRoom, items = [Pit()])
+firstRoomDesc = """You are in a small room about 20ft by 20ft with an opening on each side. In the middle, there is a rugged looking knight sitting back against the wall, wearing only ragged robes and a helmet, with a broken sword next to him."""
+firstRoom = Room(desc = firstRoomDesc, items = [Ruby(), Ruby()])
+
+westRoom1Desc = """The room is small and dark. There are only a few candles surrounding a gaping, almost endless looking pit. Inside the pit it feels cold and damp, but there is a light at the end of the tunnel."""
+westRoom1 = Room(name = "West Room", desc = westRoom1Desc, east = firstRoom, items = [Pit()])
+
+eastRoom1Desc = """There is a small chest on the back wall, guarded by a knight in shining white solid crusader armor holding a massive bloodied battle axe."""
+eastRoom1 = Room(name = "East Room", desc = eastRoom1Desc, west = firstRoom)
 
 # intro
 print("Welcome to Hale! You need to pick a class.\n")
